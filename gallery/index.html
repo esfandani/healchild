@@ -30,7 +30,7 @@ img.emoji {
 	padding: 0 !important;
 }
 </style>
-<link rel='stylesheet' id='contact-form-7-css'  href='../contents/extras/contact-form-7/includes/css/styleseb11.css?ver=4.4' type='text/css' media='all' />
+<!--<link rel='stylesheet' id='contact-form-7-css'  href='../contents/extras/contact-form-7/includes/css/styleseb11.css?ver=4.4' type='text/css' media='all' />-->
 <link rel='stylesheet' id='bwg_frontend-css'  href='../contents/extras/photo-gallery/css/bwg_frontend8dbc.css?ver=1.2.89' type='text/css' media='all' />
 <link rel='stylesheet' id='bwg_sumoselect-css'  href='../contents/extras/photo-gallery/css/sumoselect8dbc.css?ver=1.2.89' type='text/css' media='all' />
 <link rel='stylesheet' id='bwg_font-awesome-css'  href='../contents/extras/photo-gallery/css/font-awesome/font-awesomeae82.css?ver=4.2.0' type='text/css' media='all' />
@@ -69,67 +69,7 @@ var bwg_objectL10n = {"bwg_field_required":"field is required.","bwg_mail_valida
 <script type='text/javascript' src='../contents/extras/photo-gallery/js/bwg_gallery_box8dbc.js?ver=1.2.89'></script>
 <script type='text/javascript' src='../contents/extras/revslider/rs-plugin/js/jquery.themepunch.tools.min9cbc.js?ver=4.6.93'></script>
 <script type='text/javascript' src='../contents/extras/revslider/rs-plugin/js/jquery.themepunch.revolution.min9cbc.js?ver=4.6.93'></script>
-		<script type="text/javascript">
-			jQuery(document).ready(function() {
-				// CUSTOM AJAX CONTENT LOADING FUNCTION
-				var ajaxRevslider = function(obj) {
-				
-					// obj.type : Post Type
-					// obj.id : ID of Content to Load
-					// obj.aspectratio : The Aspect Ratio of the Container / Media
-					// obj.selector : The Container Selector where the Content of Ajax will be injected. It is done via the Essential Grid on Return of Content
-					
-					var content = "";
 
-					data = {};
-					
-					data.action = 'revslider_ajax_call_front';
-					data.client_action = 'get_slider_html';
-					data.token = '6cd69b8273';
-					data.type = obj.type;
-					data.id = obj.id;
-					data.aspectratio = obj.aspectratio;
-					
-					// SYNC AJAX REQUEST
-					jQuery.ajax({
-						type:"post",
-						url:"http://healchild.org/wp-admin/admin-ajax.php",
-						dataType: 'json',
-						data:data,
-						async:false,
-						success: function(ret, textStatus, XMLHttpRequest) {
-							if(ret.success == true)
-								content = ret.data;								
-						},
-						error: function(e) {
-							console.log(e);
-						}
-					});
-					
-					 // FIRST RETURN THE CONTENT WHEN IT IS LOADED !!
-					 return content;						 
-				};
-				
-				// CUSTOM AJAX FUNCTION TO REMOVE THE SLIDER
-				var ajaxRemoveRevslider = function(obj) {
-					return jQuery(obj.selector+" .rev_slider").revkill();
-				};
-
-				// EXTEND THE AJAX CONTENT LOADING TYPES WITH TYPE AND FUNCTION
-				var extendessential = setInterval(function() {
-					if (jQuery.fn.tpessential != undefined) {
-						clearInterval(extendessential);
-						if(typeof(jQuery.fn.tpessential.defaults) !== 'undefined') {
-							jQuery.fn.tpessential.defaults.ajaxTypes.push({type:"revslider",func:ajaxRevslider,killfunc:ajaxRemoveRevslider,openAnimationSpeed:0.3});   
-							// type:  Name of the Post to load via Ajax into the Essential Grid Ajax Container
-							// func: the Function Name which is Called once the Item with the Post Type has been clicked
-							// killfunc: function to kill in case the Ajax Window going to be removed (before Remove function !
-							// openAnimationSpeed: how quick the Ajax Content window should be animated (default is 0.3)
-						}
-					}
-				},30);
-			});
-		</script>
 				<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
 		<style type="text/css" id="custom-background-css">
 body.custom-background { background-color: #ffffff; }
@@ -366,17 +306,17 @@ body.custom-background { background-color: #ffffff; }
     <!-- Wrapper End -->
     <input type="hidden" id="social_login_form_uri" value="../wp-login.html" />
 <script type='text/javascript' src='../includes/js/comment-reply.minc1f9.js?ver=4.4.2'></script>
-<script type='text/javascript' src='../contents/extras/contact-form-7/includes/js/jquery.form.mind03d.js?ver=3.51.0-2014.06.20'></script>
+<!--<script type='text/javascript' src='../contents/extras/contact-form-7/includes/js/jquery.form.mind03d.js?ver=3.51.0-2014.06.20'></script>-->
 <script type='text/javascript'>
 /* <![CDATA[ */
-var _wpcf7 = {"loaderUrl":"http:\/\/healchild.org\/wp-content\/plugins\/contact-form-7\/images\/ajax-loader.gif","recaptchaEmpty":"Please verify that you are not a robot.","sending":"Sending ..."};
+/*var _wpcf7 = {"loaderUrl":"http:\/\/healchild.org\/wp-content\/plugins\/contact-form-7\/images\/ajax-loader.gif","recaptchaEmpty":"Please verify that you are not a robot.","sending":"Sending ..."};*/
 /* ]]> */
 </script>
-<script type='text/javascript' src='../contents/extras/contact-form-7/includes/js/scriptseb11.js?ver=4.4'></script>
+<!--<script type='text/javascript' src='../contents/extras/contact-form-7/includes/js/scriptseb11.js?ver=4.4'></script>-->
 <script type='text/javascript' src='../contents/extras/cms/assets/scripts/counterc1f9.js?ver=4.4.2'></script>
 <script type='text/javascript' src='../contents/extras/cms/assets/scripts/cause_functionsc1f9.js?ver=4.4.2'></script>
 <script type='text/javascript' src='../contents/extras/cms/assets/scripts/bootstrap_minc1f9.js?ver=4.4.2'></script>
-<script type='text/javascript' src='../contents/extras/cms/assets/scripts/jquery_datetimepickerc1f9.js?ver=4.4.2'></script>
+<!--<script type='text/javascript' src='../contents/extras/cms/assets/scripts/jquery_datetimepickerc1f9.js?ver=4.4.2'></script>-->
 <script type='text/javascript'>
 /* <![CDATA[ */
 var mejsL10n = {"language":"en-US","strings":{"Close":"Close","Fullscreen":"Fullscreen","Download File":"Download File","Download Video":"Download Video","Play\/Pause":"Play\/Pause","Mute Toggle":"Mute Toggle","None":"None","Turn off Fullscreen":"Turn off Fullscreen","Go Fullscreen":"Go Fullscreen","Unmute":"Unmute","Mute":"Mute","Captions\/Subtitles":"Captions\/Subtitles"}};
