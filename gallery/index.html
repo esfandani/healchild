@@ -44,6 +44,7 @@ img.emoji {
 <link rel='stylesheet' id='bootstrap_css-css'  href='../contents/themes/healchild/assets/css/bootstrapc1f9.css?ver=4.4.2' type='text/css' media='all' />
 <link rel='stylesheet' id='responsive_css-css'  href='../contents/themes/healchild/assets/css/responsivec1f9.css?ver=4.4.2' type='text/css' media='all' />
 <link rel='stylesheet' id='style_css-css'  href='../contents/themes/healchild/stylec1f9.css?ver=4.4.2' type='text/css' media='all' />
+<link rel='stylesheet' id='style_css-css22'  href='../includes/css/images-grid.css' type='text/css' media='all' />
 <link rel='stylesheet' id='widget_css-css'  href='../contents/themes/healchild/assets/css/widgetc1f9.css?ver=4.4.2' type='text/css' media='all' />
 <link rel='stylesheet' id='flexslider_css-css'  href='../contents/themes/healchild/assets/css/flexsliderc1f9.css?ver=4.4.2' type='text/css' media='all' />
 <link rel='stylesheet' id='mediaelementplayer.min_css-css'  href='../contents/themes/healchild/assets/css/mediaelementplayer.minc1f9.css?ver=4.4.2' type='text/css' media='all' />
@@ -52,6 +53,8 @@ img.emoji {
 <script type='text/javascript' src='../includes/js/jquery/jqueryc1d8.js?ver=1.11.3'></script>
 <script type='text/javascript' src='../includes/js/jquery/jquery-migrate.min1576.js?ver=1.2.1'></script>
 <script type='text/javascript' src='../contents/extras/photo-gallery/js/bwg_frontend8dbc.js?ver=1.2.89'></script>
+<script type='text/javascript' src='../includes/js/images-grid.js'></script>
+
 <script type='text/javascript'>
 /* <![CDATA[ */
 var bwg_objectsL10n = {"bwg_select_tag":"Select Tag."};
@@ -272,8 +275,24 @@ body.custom-background { background-color: #ffffff; }
         <!-- Main Content Section -->
         <main id="main-content">
             <!-- Main Section Start -->
-            <div class="main-section">				
-		        <!-- Main Section End -->
+            <div class="main-section">
+                <div id="gallery"></div>
+                <script>
+                    jQuery('#gallery').imagesGrid({
+                        images: [
+                            '../contents/uploads/photo-gallery/thumb/1.jpg',
+                            '../contents/uploads/photo-gallery/thumb/2.jpg',
+                            '../contents/uploads/photo-gallery/thumb/3.jpg',
+                            '../contents/uploads/photo-gallery/thumb/4.jpg',
+                            '../contents/uploads/photo-gallery/thumb/5.jpg',
+                            '../contents/uploads/photo-gallery/thumb/6.jpg',
+                            '../contents/uploads/photo-gallery/thumb/7.jpg',
+                            '../contents/uploads/photo-gallery/thumb/8.jpg',
+                            '../contents/uploads/photo-gallery/thumb/9.jpg',
+                        ],
+                        align: true
+                    });
+                </script>
         </div>
         </main>
         <!-- Main Content Section -->
@@ -316,7 +335,7 @@ body.custom-background { background-color: #ffffff; }
 <script type='text/javascript' src='../contents/extras/cms/assets/scripts/counterc1f9.js?ver=4.4.2'></script>
 <script type='text/javascript' src='../contents/extras/cms/assets/scripts/cause_functionsc1f9.js?ver=4.4.2'></script>
 <script type='text/javascript' src='../contents/extras/cms/assets/scripts/bootstrap_minc1f9.js?ver=4.4.2'></script>
-<!--<script type='text/javascript' src='../contents/extras/cms/assets/scripts/jquery_datetimepickerc1f9.js?ver=4.4.2'></script>-->
+
 <script type='text/javascript'>
 /* <![CDATA[ */
 var mejsL10n = {"language":"en-US","strings":{"Close":"Close","Fullscreen":"Fullscreen","Download File":"Download File","Download Video":"Download Video","Play\/Pause":"Play\/Pause","Mute Toggle":"Mute Toggle","None":"None","Turn off Fullscreen":"Turn off Fullscreen","Go Fullscreen":"Go Fullscreen","Unmute":"Unmute","Mute":"Mute","Captions\/Subtitles":"Captions\/Subtitles"}};
