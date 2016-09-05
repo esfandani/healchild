@@ -622,6 +622,7 @@ jQuery(document).ready( function() {
 
       /////HIDDEN FORM////////////////////
 	var hiddenForm = jQuery('#migla-hidden-form');
+
         
 	hiddenForm.find('input[name="first_name"]').val(  getMapValue( 'miglad_firstname' ) );
 	hiddenForm.find('input[name="last_name"]').val(  getMapValue( 'miglad_lastname' ) );
@@ -629,26 +630,21 @@ jQuery(document).ready( function() {
         hiddenForm.find('input[name="city"]').val(  getMapValue( 'miglad_city' ) );
         hiddenForm.find('input[name="zip"]').val(  getMapValue( 'miglad_postalcode' ) );
         hiddenForm.find('input[name="country"]').val( c );
-       
+       var reza_state = "";
         if( c == 'Canada' ){ 
            hiddenForm.find('input[name="state"]').val( get_province_code( getMapValue( 'miglad_province' ) ) );
+            reza_state = get_province_code( getMapValue( 'miglad_province' ) );
         }else if( c == 'United States' ){
            hiddenForm.find('input[name="state"]').val(  get_state_code( getMapValue( 'miglad_state' ) )  );
+            reza_state = get_province_code( getMapValue( 'miglad_state' )) ;
         }
 
  	hiddenForm.find('input[name="email"]').val( getMapValue( 'miglad_email' ));
-	hiddenForm.find('input[name="custom"]').val(sessionid);
 	hiddenForm.find('input[name="amount"]').val(cleanAmount);
 
    
         var paypalName = getMapValue( 'miglad_firstname' ) + " " + getMapValue( 'miglad_lastname' );
         hiddenForm.find('input[name="os0"]').val(paypalName);
-
-        var occupation = getMapValue( 'miglad_employer' ) + "," + getMapValue( 'miglad_occupation' );
-        hiddenForm.find('input[name="os1"]').val(occupation);
-
-        var campaign_send = jQuery('select[name=campaign] option:selected').text();
-        hiddenForm.find('input[name="os2"]').val(campaign_send);
 
 	if ( isRepeat == 'no') {
 		hiddenForm.find( 'input[name="src"]' ).remove();
@@ -672,37 +668,11 @@ jQuery(document).ready( function() {
 		hiddenForm.find( 'input[name="a3"]' ).val( cleanAmount );
 		hiddenForm.find( 'input[name="amount"]' ).remove();
 	}
-
-       var successUrl = new String(miglaAdminAjax.successurl);
-       if ( successUrl.search( "\\?" ) < 0 )
-       {
-	   successUrl = successUrl + "?";
-       }else{
-	   successUrl = successUrl + "&";
-       }
-
-        successUrl = successUrl + "thanks=thanks";
-	successUrl = successUrl + "&id=";
-	successUrl = successUrl + sessionid;
-
-
-        jQuery.ajax({
-          type : "post",
-          url :  miglaAdminAjax.ajaxurl,  
-          data :  { action:"miglaA_checkout" , 
-                  donorinfo:mdata, 
-                  session:sessionid
-                  },
-          success: function(msg2) {
-
-                hiddenForm .append("<input type='hidden' name='return' value='"+ successUrl +"' >");
-                hiddenForm .append("<input type='hidden' name='notify_url' value='"+ miglaAdminAjax.notifyurl +"' >");
-
-             sendtoPaypal(); 
-          }
-          //,async:false
-        }); //ajax 
-
+       var reza_custom = "Name:"+paypalName+", Address:"+getMapValue( 'miglad_address' )+","+getMapValue( 'miglad_city' )+","+getMapValue( 'miglad_postalcode' )+",";
+       reza_custom=reza_custom+c+","+reza_state+",";
+       reza_custom=reza_custom+"anonymouse:"+jQuery("#migla_donation_form").find("input[name='miglad_anonymous']").is(":checked");
+       hiddenForm.find('input[name="custom"]').val(reza_custom);
+       sendtoPaypal();
    }else{
 
     jQuery.ajax({
